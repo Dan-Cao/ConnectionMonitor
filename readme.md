@@ -12,4 +12,4 @@ Connection Monitor makes use of the following projects and data:
 
 ### Installation
 
-Connection Monitor does not need to be installed. It can simply be extracted
+Connection Monitor does not need to be installed. It can simply be extracted and run.
