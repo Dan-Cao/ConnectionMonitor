@@ -71,6 +71,7 @@ namespace ConnectionMonitor
             {
                 // Refresh connections
                 conns.Refresh();
+                ConnectionsDataGrid.Items.Refresh();
 
                 // Update summary information
                 UpdateSummary();

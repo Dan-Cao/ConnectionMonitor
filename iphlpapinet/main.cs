@@ -1179,7 +1179,7 @@ namespace IpHlpApidotnet
            
         }
 
-        // Code to find executable path from http://www.codeproject.com/Articles/304668/How-to-Get-Elevated-Process-Path-in-Net
+        // Code to find executable path below from http://www.codeproject.com/Articles/304668/How-to-Get-Elevated-Process-Path-in-Net
         [Flags]
         public enum ProcessAccessFlags : uint
         {
