@@ -36,8 +36,12 @@ namespace ConnectionMonitor
 
         // Used for periodically refresh the connections list
         private BackgroundWorker worker;
+        private Timer _timer;
 
+        // List of connections
         private TCPUDPConnections conns;
+
+       
 
         public MainWindow()
         {
@@ -50,9 +54,9 @@ namespace ConnectionMonitor
             //Set up task that refreshes connection periodically
             worker = new BackgroundWorker();
             worker.DoWork += WorkerRefreshConnections;
-            Timer timer = new Timer(1000);
-            timer.Elapsed += TimerElapsed;
-            timer.Start();
+            _timer = new Timer(500);
+            _timer.Elapsed += TimerElapsed;
+            _timer.Start();
 
             ConnectionsDataGrid.ItemsSource = new ObservableCollection<TCPUDPConnection>(conns);
 
@@ -214,6 +218,29 @@ namespace ConnectionMonitor
         {
             Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri));
             e.Handled = true;
+        }
+
+        // Clears the historical data from the datagrid
+        private void ResetButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            ConnectionsDataGrid.ItemsSource = new ObservableCollection<TCPUDPConnection>(conns);
+            UpdateSummary();
+        }
+
+        private void PauseResumeButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            // Pause if running, otherwise restart
+            if (_timer.Enabled)
+            {
+                _timer.Stop();
+                PauseResumeButton.Content = "Resume";
+            }
+            else
+            {
+                _timer.Start();
+                PauseResumeButton.Content = "Pause";
+            }
+
         }
     }
 
