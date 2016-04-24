@@ -1,4 +1,4 @@
-# Connetion Monitor
+# Connection Monitor
 
 Connection Monitor is a C# Windows application that allows users to view the active network connections on a system.
 
