@@ -12,10 +12,12 @@
             <ColumnDefinition Width="3*"  MaxWidth="300"/>
             <ColumnDefinition Width="7*" />
         </Grid.ColumnDefinitions>
-        <StackPanel MaxWidth="400" MaxHeight="400" Grid.Column="0">
-            <Button Name="PauseResumeButton" MaxWidth="100" Click="PauseResumeButton_OnClick"> Pause</Button>
+        <StackPanel MaxWidth="400" MaxHeight="400" Grid.Column="0" Margin="10">
+            <Button Name="PauseResumeButton" MaxWidth="100" Click="PauseResumeButton_OnClick" Margin="5"> Pause</Button>
             <Button Name="ResetButton" MaxWidth="100" Click="ResetButton_OnClick"> Reset</Button>
-            <Separator/>
+            
+            <Separator Margin="10"/>
+            
             <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal">
                 <TextBlock Padding="2">Total connections </TextBlock>
                 <TextBlock Padding="2" Name="TotalConnectionsText">Unknown</TextBlock>
@@ -51,7 +53,7 @@
                 <TextBlock Padding="2" Name="V6ConnectionsText">Unknown</TextBlock>
             </StackPanel>
 
-            <Separator/>
+            <Separator Margin="5"/>
             
             <TextBlock Name="PromptText" TextWrapping="Wrap"><Italic>Double-click on a connection to view more information</Italic></TextBlock>
             <TextBlock Name="ProtocolText"></TextBlock>

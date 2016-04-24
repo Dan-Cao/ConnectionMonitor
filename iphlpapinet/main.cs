@@ -391,6 +391,7 @@ namespace IpHlpApidotnet
                 this.GetTcpConnections();
                 GetTcp6Connections();
                 this.GetUdpConnections();
+                GetUdp6Connections();
                 _TimerCounter++;
                 if (_DeadConnsMultiplier == _TimerCounter)
                 {
